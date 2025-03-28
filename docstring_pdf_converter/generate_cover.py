@@ -1,3 +1,5 @@
+import os
+
 from fpdf import FPDF
 
 def generate_cover (title: str, subtitle: str, author: str, output_file: str):
