@@ -2,18 +2,25 @@ import inspect
 from config import PDF_CONFIG
 
 def extract_docstrings(module):
-    docstrings = [f"# {module.__name__}\n"]
+    module_counter = 1
+    docstrings = [f"{module_counter}.   {module.__name__}\n"]
     for name, obj in inspect.getmembers(module):
         if inspect.isclass(obj):
-            docstrings.append(f"## {name}\n")
+            class_counter = 1
+            docstrings.append(f"{module_counter}.{class_counter}    {name}\n")
             for method_name, method in inspect.getmembers(obj, inspect.isfunction):
+                method_counter = 1
                 docstring = inspect.getdoc(method)
                 if docstring:
-                    docstrings.append(f"### {method_name}\n{docstring}\n")
+                    docstrings.append(f"{module_counter}.{class_counter}.{method_counter}   {method_name}\n{docstring}\n")
+                    method_counter += 1
+            class_counter +=1
         elif inspect.isfunction(obj):
+            function_counter = 1
             docstring = inspect.getdoc(obj)
             if docstring:
-                docstrings.append(f"## {name}\n{docstring}\n")
+                docstrings.append(f"{module_counter}.{function_counter}     {name}\n{docstring}\n")
+                function_counter += 1
     return "\n".join(docstrings)
 
 def generate_cover(pdf, title: str, subtitle: str, institution: str, city: str, year: str):
@@ -47,7 +54,14 @@ def generate_cover(pdf, title: str, subtitle: str, institution: str, city: str, 
 def docstrings_to_pdf(pdf, docstrings):
     pdf.add_page()
     pdf.set_auto_page_break(auto=PDF_CONFIG["auto_page_break"], margin=PDF_CONFIG["break_margin"])
-    pdf.set_font(PDF_CONFIG["font"], size=PDF_CONFIG["font_size"])
 
     for line in docstrings.split('\n'):
+        if line.startswith("1. "):
+            pdf.set_font(PDF_CONFIG["font"], PDF_CONFIG["title_format"]["level_1"]["style"], PDF_CONFIG["title_format"]["level_1"]["size"])
+        elif line.startswith("1.1 "):
+            pdf.set_font(PDF_CONFIG["font"], PDF_CONFIG["title_format"]["level_2"]["style"], PDF_CONFIG["title_format"]["level_2"]["size"])
+        elif line.startswith("1.1.1 "):
+            pdf.set_font(PDF_CONFIG["font"], PDF_CONFIG["title_format"]["level_3"]["style"], PDF_CONFIG["title_format"]["level_3"]["size"])
+        else:
+            pdf.set_font(PDF_CONFIG["font"], "", PDF_CONFIG["font_size"])
         pdf.multi_cell(0, 10, line)
