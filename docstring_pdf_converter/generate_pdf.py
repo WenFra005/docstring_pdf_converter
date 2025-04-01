@@ -2,12 +2,18 @@ import inspect
 from config import PDF_CONFIG
 
 def extract_docstrings(module):
-    docstrings = []
+    docstrings = [f"# {module.__name__}\n"]
     for name, obj in inspect.getmembers(module):
-        if inspect.isfunction(obj) or inspect.isclass(obj):
+        if inspect.isclass(obj):
+            docstrings.append(f"## {name}\n")
+            for method_name, method in inspect.getmembers(obj, inspect.isfunction):
+                docstring = inspect.getdoc(method)
+                if docstring:
+                    docstrings.append(f"### {method_name}\n{docstring}\n")
+        elif inspect.isfunction(obj):
             docstring = inspect.getdoc(obj)
             if docstring:
-                docstrings.append(f"{name}:\n{docstring}\n")
+                docstrings.append(f"## {name}\n{docstring}\n")
     return "\n".join(docstrings)
 
 def generate_cover(pdf, title: str, subtitle: str, institution: str, city: str, year: str):
