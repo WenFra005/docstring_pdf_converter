@@ -51,6 +51,12 @@ def generate_cover(pdf, title: str, subtitle: str, institution: str, city: str, 
     pdf.cell(0, 10, f"{city.upper()}", ln=True, align="C")
     pdf.cell(0, 10, f"{year}", ln=True, align="C")
 
+def add_page_number(pdf):
+    pdf.set_y(10)
+    pdf.set_x(pdf.w - PDF_CONFIG["margin_right"] - 20)
+    pdf.set_font(PDF_CONFIG["font"], "", PDF_CONFIG["font_size"])
+    pdf.cell(0, 10, f"{pdf.page_no()}", 0, 0, 'R')
+
 def docstrings_to_pdf(pdf, docstrings):
     pdf.add_page()
     pdf.set_auto_page_break(auto=PDF_CONFIG["auto_page_break"], margin=PDF_CONFIG["break_margin"])
@@ -65,3 +71,7 @@ def docstrings_to_pdf(pdf, docstrings):
         else:
             pdf.set_font(PDF_CONFIG["font"], "", PDF_CONFIG["font_size"])
         pdf.multi_cell(0, 10, line)
+
+    for page_num in range(2, pdf.page_no() + 1):
+        pdf.page = page_num
+        add_page_number(pdf)

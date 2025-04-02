@@ -1,7 +1,7 @@
 from fpdf import FPDF
 from generate_pdf import generate_cover, extract_docstrings, docstrings_to_pdf
 
-if __name__ == "__main__":
+def main():
     pdf = FPDF()
 
     generate_cover(
@@ -19,3 +19,6 @@ if __name__ == "__main__":
     docstrings_to_pdf(pdf, docstrings)
 
     pdf.output("documentacao_completa.pdf")
+
+if __name__ == "__main__":
+    main()
