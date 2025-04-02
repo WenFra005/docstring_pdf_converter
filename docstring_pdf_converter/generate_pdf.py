@@ -1,5 +1,5 @@
 import inspect
-from config import PDF_CONFIG
+from docstring_pdf_converter.config import PDF_CONFIG
 
 def extract_docstrings(module):
     module_counter = 1
