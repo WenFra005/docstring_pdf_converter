@@ -14,7 +14,14 @@ def test_extract_docstrings():
 
 def test_generate_cover():
     pdf = FPDF()
-    generate_cover(pdf, "Título", "Subtítulo", "Instituição", "Cidade", "2025")
+    cover_info = {
+        "title": "Documentação do projeto",
+        "subtitle": "Conversão de docstring para PDF",
+        "institution": "",
+        "city": "São Paulo",
+        "year": "2025"
+    }
+    generate_cover(pdf, cover_info)
     assert pdf.page_no() == 1
 
 def test_docstrings_to_pdf():
