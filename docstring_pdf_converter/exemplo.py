@@ -1,4 +1,6 @@
-# arquivo_exemplo.py
+"""
+Módulo de exemplo para o conversor de docstring para PDF.
+"""
 
 def funcao_exemplo(param1, param2):
     """
@@ -11,21 +13,18 @@ def funcao_exemplo(param1, param2):
     Returns:
         bool: O resultado da operação.
     """
-    return True
+    return param1 > 0 and param2 == "exemplo"
 
 class ClasseExemplo:
     """
     Esta é uma classe de exemplo.
     """
 
-    def __init__(self, atributo1):
+    def __init__(self):
         """
         Inicializa a ClasseExemplo.
-
-        Args:
-            atributo1 (str): O primeiro atributo.
         """
-        self.atributo1 = atributo1
+        self.mensagem = "ClasseExemplo inicializada."
 
     def metodo_exemplo(self):
         """
@@ -35,3 +34,17 @@ class ClasseExemplo:
             str: Uma mensagem de exemplo.
         """
         return "Este é um método de exemplo."
+
+    def metodo_com_parametros(self, param1, param2):
+        """
+        Este é um método de exemplo com parâmetros.
+
+        Args:
+            param1 (int): O primeiro parâmetro.
+            param2 (str): O segundo parâmetro.
+
+        Returns:
+            bool: O resultado da operação.
+        """
+
+        return param1 > 0 and param2 == "exemplo"

@@ -1,7 +1,16 @@
+"""
+Este módulo contém a função principal para gerar um PDF a partir de docstrings de um módulo Python.
+"""
+
 from fpdf import FPDF
 from generate_pdf import generate_cover, extract_docstrings, docstrings_to_pdf
 
 def main():
+    """
+    Função principal que gera um PDF a partir de docstrings extraídas de um módulo Python.
+
+    :return: None
+    """
     pdf = FPDF()
 
     generate_cover(

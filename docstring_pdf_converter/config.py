@@ -1,4 +1,6 @@
-# config.py
+"""
+Módulo de configuração para o conversor de docstrings para PDF.
+"""
 
 PDF_CONFIG = {
     "font": "Times",
