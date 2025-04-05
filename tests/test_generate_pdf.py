@@ -8,6 +8,10 @@ from docstring_pdf_converter.generate_pdf import (extract_docstrings, generate_c
 from docstring_pdf_converter import exemplo
 
 def test_extract_docstrings():
+    """
+    Testa a função extract_docstrings para garantir que as docstrings são extraídas
+    :return: None
+    """
 
     docstrings = extract_docstrings(exemplo)
     assert "1.   docstring_pdf_converter.exemplo" in docstrings

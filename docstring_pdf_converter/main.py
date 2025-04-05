@@ -3,7 +3,8 @@ Este módulo contém a função principal para gerar um PDF a partir de docstrin
 """
 from datetime import datetime
 from fpdf import FPDF
-from docstring_pdf_converter.generate_pdf import generate_cover, extract_docstrings, docstrings_to_pdf
+from docstring_pdf_converter.generate_pdf import (generate_cover, extract_docstrings,
+                                                  docstrings_to_pdf)
 
 def main():
     """
