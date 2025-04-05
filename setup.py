@@ -1,6 +1,8 @@
-from setuptools import setup, find_packages
+"""
+Configuração do setup.py para o projeto docstring_pdf_converter.
+"""
 
-find_packages
+from setuptools import setup, find_packages
 
 setup(
     name="docstring_pdf_converter",
