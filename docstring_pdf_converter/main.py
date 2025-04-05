@@ -14,6 +14,9 @@ def main():
     """
     pdf = FPDF()
 
+    print("Executando o conversor de docstrings para PDF...")
+    print("Por favor, preencha as informações da capa do documento.")
+
     title = input("Digite o título do documento: ")
     subtitle = input("Digite o subtítulo do documento: ")
     institution = input("Digite a instituição (deixe em branco se não houver): ")

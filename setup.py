@@ -14,7 +14,7 @@ setup(
     install_requires=["fpdf"],
     entry_points={
         "console_scripts": [
-            "docstring-pdf-converter = docstring_pdf_converter.main.py",
+            "docstring-pdf-converter = docstring_pdf_converter.main:main",
         ]
     },
     description="Uma ferramenta para converter docstrings de módulos Python em PDFs formatados.",
