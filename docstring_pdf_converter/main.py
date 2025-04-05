@@ -1,7 +1,7 @@
 """
 Este módulo contém a função principal para gerar um PDF a partir de docstrings de um módulo Python.
 """
-
+from datetime import datetime
 from fpdf import FPDF
 from generate_pdf import generate_cover, extract_docstrings, docstrings_to_pdf
 
@@ -13,12 +13,17 @@ def main():
     """
     pdf = FPDF()
 
+    title = input("Digite o título do documento: ")
+    subtitle = input("Digite o subtítulo do documento: ")
+    institution = input("Digite a instituição (deixe em branco se não houver): ")
+    city = input("Digite a cidade: ")
+
     cover_info = {
-        "title": "Documentação do projeto",
-        "subtitle": "Conversão de docstring para PDF",
-        "institution": "",
-        "city": "São Paulo",
-        "year": "2025"
+        "title": title,
+        "subtitle": subtitle,
+        "institution": institution,
+        "city": city,
+        "year": datetime.now().year
     }
 
     generate_cover(pdf, cover_info)
