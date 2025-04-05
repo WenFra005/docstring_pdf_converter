@@ -55,7 +55,7 @@ def generate_cover(pdf, cover_info):
     pdf.set_font(PDF_CONFIG["font"], "B", PDF_CONFIG["font_size"])
     pdf.cell(0, 10,
              f"{cover_info["institution"].upper()
-             if cover_info["institution"] 
+             if cover_info["institution"]
              else 'AUTOR INDEPENDENTE'}", ln=True, align="C")
 
     # Pular 8 linhas
