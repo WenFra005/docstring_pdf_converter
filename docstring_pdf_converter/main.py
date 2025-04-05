@@ -37,9 +37,14 @@ def main():
     docstrings = extract_docstrings(module)
     docstrings_to_pdf(pdf, docstrings)
 
-    output_path = input("Digite o caminho para salvar o PDF "
-                        "(deixe em branco para salvar no diretório atual): ")
-    pdf.output(output_path)
+    output_filename = input("Digite o nome do arquivo PDF (exemplo: docstrings.pdf)")
+    if not output_filename.endswith(".pdf"):
+        output_filename += ".pdf"
+    if not output_filename:
+        output_filename = "docstrings.pdf"
+
+    pdf.output(output_filename)
+    print(f"PDF gerado com sucesso: {output_filename}")
 
 if __name__ == "__main__":
     main()
