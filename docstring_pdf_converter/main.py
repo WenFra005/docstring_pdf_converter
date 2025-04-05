@@ -13,14 +13,15 @@ def main():
     """
     pdf = FPDF()
 
-    generate_cover(
-        pdf,
-        "Documentação do projeto",
-        "Conversão de docstring para PDF",
-        "",
-        "São Paulo",
-        "2025"
-    )
+    cover_info = {
+        "title": "Documentação do projeto",
+        "subtitle": "Conversão de docstring para PDF",
+        "institution": "",
+        "city": "São Paulo",
+        "year": "2025"
+    }
+
+    generate_cover(pdf, cover_info)
 
     module_name = "exemplo"
     module = __import__(module_name)
