@@ -4,6 +4,9 @@ Configuração do setup.py para o projeto docstring_pdf_converter.
 
 from setuptools import setup, find_packages
 
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
 setup(
     name="docstring_pdf_converter",
     version="0.1",
@@ -15,7 +18,7 @@ setup(
         ]
     },
     description="Uma ferramenta para converter docstrings de módulos Python em PDFs formatados.",
-    long_description=open("README.md").read(),
+    long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/WenFra005/docstring_pdf_converter",
     author="Wendell Francisco",
