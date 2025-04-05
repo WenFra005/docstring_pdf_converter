@@ -1,6 +1,7 @@
 """
 Este módulo contém a função principal para gerar um PDF a partir de docstrings de um módulo Python.
 """
+import importlib
 from datetime import datetime
 from fpdf import FPDF
 from docstring_pdf_converter.generate_pdf import (generate_cover, extract_docstrings,
@@ -33,7 +34,7 @@ def main():
     generate_cover(pdf, cover_info)
 
     module_name = input("Digite o nome do módulo (exemplo: docstring_pdf_converter.exemplo): ")
-    module = __import__(module_name)
+    module = importlib.import_module(module_name)
     docstrings = extract_docstrings(module)
     docstrings_to_pdf(pdf, docstrings)
 
