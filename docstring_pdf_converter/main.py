@@ -32,12 +32,14 @@ def main():
 
     generate_cover(pdf, cover_info)
 
-    module_name = "exemplo"
+    module_name = input("Digite o nome do módulo (exemplo: docstring_pdf_converter.exemplo): ")
     module = __import__(module_name)
     docstrings = extract_docstrings(module)
     docstrings_to_pdf(pdf, docstrings)
 
-    pdf.output("documentacao_completa.pdf")
+    output_path = input("Digite o caminho para salvar o PDF "
+                        "(deixe em branco para salvar no diretório atual): ")
+    pdf.output(output_path)
 
 if __name__ == "__main__":
     main()
