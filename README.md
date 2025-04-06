@@ -1,4 +1,3 @@
-
 # Projeto docstring\_pdf\_converter
 
 O `docstring\_pdf\_converter` é uma ferramenta que gera um PDF a partir das docstrings de um módulo Python. Ele extrai as docstrings de classes e funções e as organiza em um documento PDF formatado, facilitando a documentação e a leitura das descrições do código.
@@ -66,4 +65,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull re
 ## Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-```
