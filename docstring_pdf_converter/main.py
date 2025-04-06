@@ -38,7 +38,7 @@ def main():
     docstrings = extract_docstrings(module)
     docstrings_to_pdf(pdf, docstrings)
 
-    output_filename = input("Digite o nome do arquivo PDF (exemplo: docstrings.pdf)")
+    output_filename = input("Digite o nome do arquivo PDF (exemplo: docstrings.pdf): ")
     if not output_filename.endswith(".pdf"):
         output_filename += ".pdf"
     if not output_filename:
