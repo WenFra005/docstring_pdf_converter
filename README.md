@@ -32,7 +32,7 @@ pip install docstring_pdf_converter
 Após a instalação, você pode usar a ferramenta diretamente da linha de comando:
 
 ```sh
-docstring-pdf-converter
+docstring-pdf-converter main.py
 ```
 
 O comando acima irá solicitar algumas informações para a capa do PDF, como título, subtítulo, instituição e cidade. Em seguida, ele irá gerar um PDF com as docstrings extraídas do módulo especificado.
@@ -42,7 +42,7 @@ O comando acima irá solicitar algumas informações para a capa do PDF, como t�
 1. Execute o comando:
 
     ```sh
-    docstring-pdf-converter
+    docstring-pdf-converter main.py
     ```
 
 2. Insira as informações solicitadas:
