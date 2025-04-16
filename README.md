@@ -1,5 +1,10 @@
 # Projeto docstring\_pdf\_converter
 
+![Testes](https://github.com/WenFra005/docstring_pdf_converter/actions/workflows/python-app.yml/badge.svg)
+![PyPI - License](https://img.shields.io/pypi/l/docstring_pdf_converter)
+![Pylint](https://github.com/WenFra005/docstring_pdf_converter/actions/workflows/pylint.yml/badge.svg)
+![PyPI - Version](https://img.shields.io/pypi/v/docstring_pdf_converter)
+
 O `docstring\_pdf\_converter` é uma ferramenta que gera um PDF a partir das docstrings de um módulo Python. Ele extrai as docstrings de classes e funções e as organiza em um documento PDF formatado, facilitando a documentação e a leitura das descrições do código.
 
 ## Funcionalidades
