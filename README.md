@@ -61,7 +61,7 @@ O comando acima irá solicitar algumas informações para a capa do PDF, como t�
     Digite o nome do arquivo PDF (exemplo: docstrings.pdf): 
     ```
 
-3. O PDF `documentacao_completa.pdf` será gerado no diretório atual com as docstrings extraídas e formatadas.
+3. O PDF com o nome que o usuário escolher será gerado no diretório atual com as docstrings extraídas e formatadas.
 
 ## Contribuição
 
