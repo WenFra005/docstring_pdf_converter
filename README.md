@@ -1,4 +1,4 @@
-# Projeto docstring\_pdf\_converter
+# Projeto docstring_pdf_converter
 
 ![Testes](https://github.com/WenFra005/docstring_pdf_converter/actions/workflows/python-app.yml/badge.svg)
 ![PyPI - License](https://img.shields.io/pypi/l/docstring_pdf_converter)
@@ -47,7 +47,7 @@ O comando acima irá solicitar algumas informações para a capa do PDF, como t�
 1. Execute o comando:
 
     ```sh
-    docstring-pdf-converter main.py
+    docstring_pdf_converter main.py
     ```
 
 2. Insira as informações solicitadas:
